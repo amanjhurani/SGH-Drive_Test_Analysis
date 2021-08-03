@@ -7,13 +7,13 @@
 5. Implement Login for different users (Not Necessary)
 6. Create a template report to be used for automatic report generation.
 
-## How to run django backend (Python)
+## How to run django backend (Python) PORT 8000
 ### where "manage.py" exists
 >pip install -r requirements.txt
 
 >py manage.py runserver
 
-## How to run react frontend (NodeJS)
+## How to run react frontend (NodeJS) PORT 4000
 ### where "package.json" exists
 >npm install
 
