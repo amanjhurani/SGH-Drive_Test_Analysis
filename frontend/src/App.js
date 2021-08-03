@@ -1,10 +1,13 @@
 import TopBar from "./components/topbar/TopBar";
 import SideBar from "./components/sidebar/SideBar";
 import "./App.css";
+import React from "react";
+
 import Home from "./pages/home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-function App() {
-  return (
+export default class App extends React.Component {
+  render() {
+    return (
     <Router>
       <TopBar></TopBar>
       <div className="container">
@@ -17,6 +20,5 @@ function App() {
       </div>
     </Router>
   );
+  }
 }
-
-export default App;
