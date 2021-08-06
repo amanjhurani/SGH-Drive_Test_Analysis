@@ -1,6 +1,8 @@
 import React from "react";
 import ReactFileReader from "react-file-reader";
 import { CsvToHtmlTable } from "react-csv-to-table";
+import { Publish } from "@material-ui/icons";
+
 import "./Home.css";
 export default class Home extends React.Component {
   constructor(props) {
@@ -25,7 +27,7 @@ export default class Home extends React.Component {
       <div className="home">
         <div>
           <ReactFileReader handleFiles={(e) => this.handleFiles(e)} fileTypes={".csv"}>
-            <button className="btn">Upload</button>
+            <button className="home-uploadbtn"> <Publish className="btn-icon" /> Upload</button>
           </ReactFileReader>
           <div className="home-excel">
 
