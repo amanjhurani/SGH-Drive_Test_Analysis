@@ -41,3 +41,46 @@
     text-align: left;
     
 }
+
+.home-blank {
+    text-align: center;
+}
+
+.home-wrapper {
+    width: 100%;
+
+}
+
+.home-excelwrapper {
+    display: flex;
+}
+
+.home-btndiv {
+    margin: auto;
+    width: 15%;
+}
+
+.home-analyzebtn {
+    border: 2px solid #009879;
+	font-weight: 100;
+	padding: 20px;
+	text-transform: uppercase;
+	border-radius: 6px;
+	transition: all 0.3s ease 0s;
+	letter-spacing: 3px;
+    cursor: pointer;
+	color: #009879 !important;
+	background: none;
+
+    
+}
+
+.home-analyzebtn:hover {
+	background: #009879;
+	color: #ffffff !important;
+	font-weight: 700 !important;
+	letter-spacing: 3px;
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.3s ease 0s;
+}

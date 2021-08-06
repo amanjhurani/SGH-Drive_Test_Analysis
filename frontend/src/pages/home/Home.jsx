@@ -1,7 +1,7 @@
 import React from "react";
 import ReactFileReader from "react-file-reader";
 import { CsvToHtmlTable } from "react-csv-to-table";
-import { Publish } from "@material-ui/icons";
+import { Publish, Timeline } from "@material-ui/icons";
 
 import "./Home.css";
 export default class Home extends React.Component {
@@ -12,7 +12,7 @@ export default class Home extends React.Component {
     };
   }
 
-  handleFiles(files){
+  handleFiles(files) {
     var reader = new FileReader();
     reader.onload = (e) => {
       this.setState({
@@ -25,18 +25,33 @@ export default class Home extends React.Component {
   render() {
     return (
       <div className="home">
-        <div>
-          <ReactFileReader handleFiles={(e) => this.handleFiles(e)} fileTypes={".csv"}>
-            <button className="home-uploadbtn"> <Publish className="btn-icon" /> Upload</button>
+        <div className="home-wrapper">
+          <ReactFileReader
+            handleFiles={(e) => this.handleFiles(e)}
+            fileTypes={".csv"}
+          >
+            <button className="home-uploadbtn">
+              <Publish className="btn-icon" /> Upload
+            </button>
           </ReactFileReader>
-          <div className="home-excel">
-
-          <CsvToHtmlTable
-            data={this.state.csvData}
-            csvDelimiter=","
-            tableClassName="table table-striped table-hover"
-            />
+          {this.state.csvData && this.state.csvData.length ? (
+            <div className="home-excelwrapper">
+              <div className="home-excel">
+                <CsvToHtmlTable
+                  data={this.state.csvData}
+                  csvDelimiter=","
+                  tableClassName="table table-striped table-hover"
+                />
+              </div>
+              <div className="home-btndiv">
+                <button className="home-analyzebtn">
+                  <Timeline className="btn-icon" /> Analyze
+                </button>
+              </div>
             </div>
+          ) : (
+            <div className="home-blank">Please upload a csv file.</div>
+          )}
         </div>
       </div>
     );
