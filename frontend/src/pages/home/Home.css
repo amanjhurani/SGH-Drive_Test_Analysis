@@ -24,6 +24,7 @@
 
     overflow: scroll;
     width: 100%;
+    z-index: -1;
 }
 .table th, td {
     border-collapse: collapse;
@@ -49,10 +50,6 @@
 .home-wrapper {
     width: 100%;
 
-}
-
-.home-excelwrapper {
-    display: flex;
 }
 
 .home-btndiv {
