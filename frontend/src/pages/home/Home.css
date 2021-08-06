@@ -1,3 +1,26 @@
 .home {
     flex: 4;
+    width: 10em;
+    height: 100%;
+}
+.home-excel {
+    height: 80%;
+    overflow: scroll;
+    width: 100%;
+}
+.table th, td {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 100px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    
+}
+
+.table tbody tr:nth-of-type(even) {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    
 }

@@ -27,11 +27,14 @@ export default class Home extends React.Component {
           <ReactFileReader handleFiles={(e) => this.handleFiles(e)} fileTypes={".csv"}>
             <button className="btn">Upload</button>
           </ReactFileReader>
+          <div className="home-excel">
+
           <CsvToHtmlTable
             data={this.state.csvData}
             csvDelimiter=","
             tableClassName="table table-striped table-hover"
-          />
+            />
+            </div>
         </div>
       </div>
     );
