@@ -1,3 +1,4 @@
 /env
 **/base/__pycache__
 **/base/migrations
+**/env
