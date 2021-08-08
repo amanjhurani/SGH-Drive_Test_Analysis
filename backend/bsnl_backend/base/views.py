@@ -16,6 +16,7 @@ import math as math
 
 BASE_PATH = "./files"
 
+
 @api_view(['GET', 'DELETE', 'PUT', 'POST'])
 def upload_file(request):
     uploaded_filename = request.FILES['file'].name
@@ -31,6 +32,7 @@ def upload_file(request):
     fout.close()
     return Response(status=200, data={"sucess"})
 
+
 @api_view(['GET'])
 def all_files(request):
     try:
@@ -39,6 +41,7 @@ def all_files(request):
         pass
     file_list = os.listdir(BASE_PATH)
     return Response(status=200, data=file_list)
+
 
 @api_view(['GET', 'POST'])
 def display_rscp(request):
@@ -58,6 +61,7 @@ def display_rscp(request):
 
     return Response(status=200, data=rscp_json)
 
+
 @api_view(['GET', 'POST'])
 def display_rxtx(request):
 
@@ -67,9 +71,9 @@ def display_rxtx(request):
     rxtx_json = []
 
     for time, lat, long, rx_power, tx_power in zip(rxtx_df['Time'].to_list(), rxtx_df['Latitude'].to_list(), rxtx_df['Longitude'].to_list(), rxtx_df['Rx Power (dBm)'].to_list(), rxtx_df['Tx Power (dBm)'].to_list()):
-        if  math.isnan(tx_power):
+        if math.isnan(tx_power):
             tx_power = None
-            
+
         tmp = dict()
         tmp["time_stamp"] = time
         tmp["coordinate"] = [lat, long]
@@ -98,6 +102,7 @@ def display_eclo(request):
 
     return Response(status=200, data=eclo_json)
 
+
 @api_view(['GET', 'POST'])
 def display_rssi(request):
 
@@ -105,13 +110,11 @@ def display_rssi(request):
     data_file = os.path.join(BASE_PATH, file_name)
     rssi_df = pd.read_csv(data_file)
     rssi_json = []
-
     for time, lat, long, rscp, eclo in zip(rssi_df['Time'].to_list(), rssi_df['Latitude'].to_list(), rssi_df['Longitude'].to_list(), rssi_df['Active RSCP (dBm)(0)'].to_list(), rssi_df['Total Agg EcIo (dB)'].to_list(),):
         tmp = dict()
         tmp["time_stamp"] = time
         tmp["coordinate"] = [lat, long]
-        tmp["active_rssi"] = round(rscp-eclo,2)
-
+        tmp["active_rssi"] = round(rscp-eclo, 2)
         rssi_json.append(tmp)
 
     return Response(status=200, data=rssi_json)
