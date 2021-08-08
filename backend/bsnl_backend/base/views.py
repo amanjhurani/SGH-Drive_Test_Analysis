@@ -97,3 +97,21 @@ def display_eclo(request):
         eclo_json.append(tmp)
 
     return Response(status=200, data=eclo_json)
+
+@api_view(['GET', 'POST'])
+def display_rssi(request):
+
+    file_name = request.data.get('file_name')
+    data_file = os.path.join(BASE_PATH, file_name)
+    rssi_df = pd.read_csv(data_file)
+    rssi_json = []
+
+    for time, lat, long, rscp, eclo in zip(rssi_df['Time'].to_list(), rssi_df['Latitude'].to_list(), rssi_df['Longitude'].to_list(), rssi_df['Active RSCP (dBm)(0)'].to_list(), rssi_df['Total Agg EcIo (dB)'].to_list(),):
+        tmp = dict()
+        tmp["time_stamp"] = time
+        tmp["coordinate"] = [lat, long]
+        tmp["active_rssi"] = round(rscp-eclo,2)
+
+        rssi_json.append(tmp)
+
+    return Response(status=200, data=rssi_json)
