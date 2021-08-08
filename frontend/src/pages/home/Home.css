@@ -1,5 +1,5 @@
 .home {
-    flex: 4;
+    flex: 6;
     width: 10em;
 }
 .home-uploadbtn {
@@ -12,7 +12,13 @@
     font-size: 3vh;
     border: 3px solid #009879;
     box-shadow: rgba(0, 0, 0, 1.15) 1.95px 1.95px 2.6px;
+    transition: all 0.3s ease 0s;
 
+}
+
+.home-uploadbtn:hover {
+    background-color: #009879;
+    color: rgb(255, 255, 255);
 }
 
 .btn-icon {
@@ -55,6 +61,7 @@
 .home-btndiv {
     margin: auto;
     width: 15%;
+    line-height: calc(100vh - 600px);
 }
 
 .home-analyzebtn {
