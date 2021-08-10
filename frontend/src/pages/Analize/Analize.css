@@ -1,0 +1,21 @@
+.analize-wrapper {
+    flex: 6;
+}
+.grid-4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 40px;
+}
+.grid-4 .grid-item {
+    padding: 15px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.61);
+    border-radius: 20px;
+    cursor: pointer;
+}
+.grid-item p {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+.row {
+    --bs-gutter-x: 0 !important;}

@@ -25,8 +25,10 @@ def upload_file(request):
     except:
         pass
     full_filename = os.path.join(BASE_PATH, uploaded_filename)
+    print(full_filename)
     fout = open(full_filename, 'wb+')
     file_data = request.FILES['file']
+    print(file_data)
     for chunk in file_data.chunks():
         fout.write(chunk)
     fout.close()
