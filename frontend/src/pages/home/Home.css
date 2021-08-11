@@ -1,3 +1,4 @@
+
 .home {
     flex: 6;
     width: 10em;
@@ -9,8 +10,8 @@
   	color: #ffffff !important;
     border-radius: 10px;
     /* font-weight: bold; */
-    font-size: 20px;
-    border: 3px solid #0062cc;
+    font-size: 1rem;
+    border: 0;
     box-shadow: rgba(0, 0, 0, 1.15) 1.95px 1.95px 2.6px;
     transition: all 0.3s ease 0s;
 }
@@ -64,31 +65,29 @@
 
 .home-analyzebtn {
     border: 2px solid #0062cc;
-	font-weight: 100;
 	padding: 20px;
 	text-transform: uppercase;
 	border-radius: 6px;
 	transition: all 0.3s ease 0s;
 	letter-spacing: 3px;
     cursor: pointer;
-	color: #0062cc !important;
-	background: none;
-
-
-}
-
-.home-analyzebtn:hover {
-	background: #0062cc;
+    background: #0062cc;
 	color: #ffffff !important;
 	font-weight: 700 !important;
-	letter-spacing: 3px;
 	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
 	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-	transition: all 0.3s ease 0s;
+
+
 }
+
+
 .react-file-reader {
-    float: right;
+margin-left: 15px;
 }
 .float-left {
     float: left;
+}
+
+.display-buttons {
+    display: flex;
 }

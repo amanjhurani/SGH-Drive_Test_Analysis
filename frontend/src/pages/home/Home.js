@@ -65,9 +65,9 @@ export default class Home extends React.Component {
     return (
       <div className="home bg-black-2">
         <div className="home-wrapper">
-          <div className="file-list p-4 clearfix">
             <h3 className="mb-3 text-white">Select Datasheet</h3>
-            <DropdownButton id="dropdown-basic-button" title="Select from uploads" className="float-left">
+          <div className="file-list p-4 clearfix display-buttons">
+            <DropdownButton id="dropdown-basic-button" title="Select from uploads">
               {
                 this.state.fileList.map((file, idx) => {
                  return <Dropdown.Item key={idx}>{file}</Dropdown.Item>
@@ -78,7 +78,6 @@ export default class Home extends React.Component {
             <ReactFileReader
             handleFiles={(e) => this.handleFiles(e)}
             fileTypes={".csv"}
-            className="float-left"
           >
             <button className="home-uploadbtn shadow bg-black-1">
               <Publish className="btn-icon" /> Upload

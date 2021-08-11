@@ -19,12 +19,14 @@ export default class KmeanPie extends React.PureComponent {
             var kdata = data.map((kmean) => {
                  return kmean.label
             })
+            var klength = kdata.length
             await this.setState({ kmeans: data });
             const kmean_data = {
+              labels: ['Good', 'Fair', 'Very Good', 'Poor', 'Excellent'],
                 datasets: [
                     {
                         label: ['Good', 'Fair', 'Very Good', 'Poor', 'Excellent'],
-                        data: [kdata.filter(k => k==0).length,kdata.filter(k => k==1).length,kdata.filter((k) => k==2).length, kdata.filter((k) => k==3).length, kdata.filter((k) => k==4).length],
+                        data: [(kdata.filter(k => k==0).length/klength)*100,(kdata.filter(k => k==1).length/klength)*100,(kdata.filter(k => k==2).length/klength)*100, (kdata.filter(k => k==3).length/klength)*100, (kdata.filter(k => k==4).length/klength)*100],
                         backgroundColor: [
                             'blue',
                             '#ffff00',
@@ -39,20 +41,26 @@ export default class KmeanPie extends React.PureComponent {
         });
     }
     render() {
-        const options = {
-            scales: {
-              yAxes: [
-                {
-                  ticks: {
-                    beginAtZero: true,
-                  },
-                },
-              ],
+      const options = {
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              var dataset = data.datasets[tooltipItem.datasetIndex];
+              var meta = dataset._meta[Object.keys(dataset._meta)[0]];
+              var total = meta.total;
+              var currentValue = dataset.data[tooltipItem.index];
+              var percentage = parseFloat((currentValue/total*100).toFixed(1));
+              return currentValue + ' (' + percentage + '%)';
             },
-          };
+            title: function(tooltipItem, data) {
+              return data.labels[tooltipItem[0].index];
+            }
+          }
+        }
+      }
         return (
         <div className="chart pie-chart">
-            {this.state.data ? (<>{console.log(this.state.data)}<Pie data={this.state.data} /></>): ""}
+            {this.state.data ? (<>{console.log(this.state.data)}<Pie data={this.state.data} options={options} /></>): ""}
         </div>
         );
     }

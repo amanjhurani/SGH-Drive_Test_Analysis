@@ -34,3 +34,6 @@
     box-shadow: 2px 3px 10px 3px rgba(0, 0, 0, 0.5);
     background-color: #1c1c23 !important;
 }
+.grid-4 .grid-item.active {
+    background-color: #05305e !important;
+}
