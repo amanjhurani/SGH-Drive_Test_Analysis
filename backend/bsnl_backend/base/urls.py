@@ -11,5 +11,8 @@ urlpatterns = [
     path('api/v1/display_rxtx', views.display_rxtx, name="display_rxtx"),
     path('api/v1/display_rscp', views.display_rscp, name="display_rscp"),
     path('api/v1/display_eclo', views.display_eclo, name="display_eclo"),
-    path('api/v1/display_rssi', views.display_rssi, name="display_rssi")
+    path('api/v1/display_rssi', views.display_rssi, name="display_rssi"),
+    path('api/v1/display_kmeans', views.k_means, name="k_means"),
+    path('api/v1/get_csv_data', views.get_csv_data, name="get_csv_data")
+
 ]

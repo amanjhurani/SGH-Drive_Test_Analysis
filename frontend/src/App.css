@@ -6,3 +6,31 @@ a, a:hover {
     text-decoration: none;
     color: black;
 }
+.bg-black-1 {
+    background-color: rgba(22, 22, 29, 0.973) !important;
+}
+.bg-black-2 {
+    background-color: rgb(22,22,29);
+}
+.sidebar-list-item a, .sidebar-list-item{
+    color: white !important;
+    border: 0px;
+}
+.sidebar-list-item:hover {
+   background-color:rgba(22, 22, 29, 0.90) !important;
+}
+tr td {
+    color: white;
+}
+.chart {
+    flex: 6;
+}
+.analize-wrapper .chart {
+    width: 70%;
+    margin: auto;
+    box-shadow: 2px 3px 10px 3px rgba(0, 0, 0, 0.3);
+    padding: 20px
+}
+.chart.pie-chart {
+    width: 35%
+}

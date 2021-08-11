@@ -5,7 +5,7 @@ import { LineStyle, TrendingUp, Notes, Report } from "@material-ui/icons";
 
 export default function TopBar() {
   return (
-    <div className="sidebar">
+    <div className="sidebar bg-black-1">
       <div className="sidebar-wrapper">
         <div className="sidebar-listing">
           <ul className="sidebar-list">
@@ -18,7 +18,7 @@ export default function TopBar() {
             <li className="sidebar-list-item">
             <Link to='analize'>
               <TrendingUp className="sidebar-icon" />
-              Analize  
+              Analyze  
               </Link>        
               </li>
             <li className="sidebar-list-item">

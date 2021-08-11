@@ -4,9 +4,9 @@ import { NotificationsNone, Language, Add } from "@material-ui/icons";
 
 export default function TopBar() {
   return (
-    <div className="topbar">
+    <div className="topbar bg-primary">
       <div className="topbar-wrapper">
-        <div className="topbar-left">Drive Test Analysis</div>
+        <div className="topbar-left text-white">Drive Test Analysis</div>
         <div className="topbar-right">
             <div className="topbar-iconcontainer">
               <NotificationsNone />

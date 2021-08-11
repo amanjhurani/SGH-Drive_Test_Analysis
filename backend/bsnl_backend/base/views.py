@@ -11,7 +11,15 @@ from rest_framework import permissions
 
 import csv
 import os
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+from sklearn.cluster import Birch
+from numpy import unique, where
+
 import pandas as pd
+import numpy as np
+import os
 import math as math
 
 BASE_PATH = "./files"
@@ -120,3 +128,46 @@ def display_rssi(request):
         rssi_json.append(tmp)
 
     return Response(status=200, data=rssi_json)
+
+@api_view(['GET', 'DELETE', 'POST'])
+def k_means(request):
+    file_name = request.data.get('file_name')
+    data_file = os.path.join(BASE_PATH, file_name)
+    test_df = pd.read_csv(data_file)
+
+    df = pd.read_csv(data_file)
+    necessary = ['Time', 'Latitude', 'Longitude', 'Rx Power (dBm)', 'Tx Power (dBm)', 'Total Agg EcIo (dB)', 'Active RSCP (dBm)(0)']
+    test_df = df[necessary]
+
+    test_df['Rx Power (dBm)'].fillna(test_df['Rx Power (dBm)'].mean(), inplace=True)
+    test_df['Tx Power (dBm)'].fillna(test_df['Rx Power (dBm)'].mean(), inplace=True)
+
+    X=test_df.iloc[:, [5,6]].values
+
+    k_means_json = []
+    kmeans = KMeans(n_clusters=5, init ='k-means++', max_iter=300, n_init=10,random_state=0 )
+
+    y_kmeans = kmeans.fit_predict(X)
+
+    print(y_kmeans)
+
+    for time, lat, long, rscp, ecio, label in zip(test_df['Time'].to_list(), test_df['Latitude'].to_list(), test_df['Longitude'].to_list(), test_df['Active RSCP (dBm)(0)'].to_list(), test_df['Total Agg EcIo (dB)'].to_list(), y_kmeans):
+        tmp = dict()
+        tmp["time_stamp"] = time
+        tmp["coordinate"] = [lat, long]
+        tmp["active_rscp"] = rscp
+        tmp['active_ecio'] = ecio
+        tmp['label'] = label
+
+        k_means_json.append(tmp)
+
+    return Response(status=200, data=k_means_json)
+
+@api_view(['GET', 'DELETE', 'POST'])
+def get_csv_data(request):
+
+    file_name = request.data.get('file_name')
+    data_file = os.path.join(BASE_PATH, file_name)
+    file = open(data_file)
+    csv_data = file.read()
+    return Response(status=200, data=str(csv_data))

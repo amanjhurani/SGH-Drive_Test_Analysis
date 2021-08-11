@@ -9,7 +9,11 @@ import Home from "./pages/home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import RSSIMap from "./pages/maps/RSSIMap";
 import ECIOMap from "./pages/maps/ECIOMap";
-import Analize from "./pages/Analize/Analize";
+import MapView from "./pages/Analize/MapView.js";
+import ChartView from "./pages/Analize/ChartView.js";
+import KmeansChart from "./pages/charts/KmeansChatrt";
+import Report from "./pages/report/Report";
+import KmeanPie from "./pages/charts/KmeanPie";
 export default class App extends React.Component {
   render() {
     return (
@@ -30,8 +34,20 @@ export default class App extends React.Component {
           <Route exact path="/ecioMap">
             <ECIOMap />
           </Route>
-          <Route exact path="/analize">
-            <Analize />
+          <Route exact path="/analize/mapView">
+            <MapView />
+          </Route>
+          <Route exact path="/analize/chartView">
+            <ChartView />
+          </Route>
+          <Route exact path="/kmeans">
+            <KmeansChart />
+          </Route>
+          <Route exact path="/kmeanpie">
+            <KmeanPie />
+          </Route>
+          <Route exact path="/report">
+            <Report />
           </Route>
         </Switch>
       </div>

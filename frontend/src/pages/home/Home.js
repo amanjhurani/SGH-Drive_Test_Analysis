@@ -2,10 +2,11 @@ import React from "react";
 import ReactFileReader from "react-file-reader";
 import { CsvToHtmlTable } from "react-csv-to-table";
 import { Publish, Timeline } from "@material-ui/icons";
-import { getFiles } from '../../api/GetFiles'
+import { getFiles, getCurrentFile } from '../../api/GetFiles'
 import { Dropdown, DropdownButton } from 'react-bootstrap'
 import "./Home.css";
 import { uploadFile } from "../../api/uploadFile";
+import { Link } from "react-router-dom";
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -50,13 +51,22 @@ export default class Home extends React.Component {
       .catch((err) => {
         console.log("something went wrong /Home")
       })
+      if(localStorage.getItem("current_file") != null) {
+        getCurrentFile(localStorage.getItem("current_file"))
+        .then((res) => {
+          this.setState({csvData: res.data})
+        })
+        .catch((err) => {
+          console.log("something went wron with file get", err);
+        })
+      } 
   }
   render() {
     return (
-      <div className="home">
+      <div className="home bg-black-2">
         <div className="home-wrapper">
           <div className="file-list p-4 clearfix">
-            <h3 className="mb-3">Select Datasheet</h3>
+            <h3 className="mb-3 text-white">Select Datasheet</h3>
             <DropdownButton id="dropdown-basic-button" title="Select from uploads" className="float-left">
               {
                 this.state.fileList.map((file, idx) => {
@@ -70,7 +80,7 @@ export default class Home extends React.Component {
             fileTypes={".csv"}
             className="float-right"
           >
-            <button className="home-uploadbtn">
+            <button className="home-uploadbtn shadow bg-black-1">
               <Publish className="btn-icon" /> Upload
             </button>
           </ReactFileReader>
@@ -85,14 +95,16 @@ export default class Home extends React.Component {
                   tableClassName="table table-striped table-hover"
                 />
               </div>
-              <div className="home-btndiv">
+              <div className="home-btndiv my-2">
+                <Link to="/analize" >
                 <button className="home-analyzebtn">
                   <Timeline className="btn-icon" /> Analyze
                 </button>
+                </Link>
               </div>
             </div>
           ) : (
-            <div className="home-blank">Please upload a csv file.</div>
+            <div className="home-blank text-white">Please upload a csv file.</div>
           )}
         </div>
       </div>

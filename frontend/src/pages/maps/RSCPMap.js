@@ -49,8 +49,8 @@ export default class RSCPMap extends React.Component {
                 <MapContainer
                     className="map-IND"
                     center={[22.508548, 73.471351]}
-                    zoom={15}
-                    scrollWheelZoom={false}
+                    zoom={14}
+                    scrollWheelZoom={true}
                 >
                     <TileLayer
                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

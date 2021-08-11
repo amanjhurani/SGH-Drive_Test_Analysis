@@ -3,19 +3,29 @@
 }
 .grid-4 {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     padding: 40px;
 }
 .grid-4 .grid-item {
     padding: 15px 20px;
-    border: 1px solid rgba(0, 0, 0, 0.61);
-    border-radius: 20px;
+    border-radius: 7px;
     cursor: pointer;
+    border-bottom: 5px solid #0b67c9;
 }
 .grid-item p {
     font-size: 20px;
     margin-bottom: 0;
+    color: white;
 }
 .row {
     --bs-gutter-x: 0 !important;}
+.analize-wrapper .leaflet-container {
+    height: 450px;
+    width: 100% !important;
+}
+.analize-wrapper .map {
+    padding: 20px;
+    box-shadow: 2px 3px 10px 3px rgba(0, 0, 0, 0.5);
+    background-color: rgba(22, 22, 29, 0.973) !important;
+}

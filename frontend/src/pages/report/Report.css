@@ -1,0 +1,90 @@
+.Report {
+    flex : 6;
+
+}
+
+.Report-wrapper {
+    width : 80%;
+    padding : 30px;
+    margin: auto;
+    box-shadow: -1px 2px 8px 1px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -1px 2px 8px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 2px 8px 1px rgba(0,0,0,0.75);
+}
+
+.Report-upper {
+    margin-top : 10px;
+    display : flex;
+    justify-content: space-around;
+}
+
+.Report-discription p {
+    color : #000;
+    font-size : 15px;
+}
+
+.Report-discription {
+    margin-top : 10px;
+}
+
+.Report-graph-groups {
+    display : flex;
+    justify-content: space-around;
+    margin: 0;
+}
+.leaflet-container {
+    height: 300px;
+    width : 220px;
+    margin: 0;
+    padding: 0;
+}
+
+.Rscp-map {
+    text-align: center;
+}
+
+.Rssi-map {
+    text-align: center;
+}
+
+.Ecio-map {
+    text-align: center;
+}
+
+h3 {
+    margin-top : 20px;
+}
+
+.wikitable {
+    width : 100%;
+}
+
+
+
+.wikitable th td {
+    margin-top : 15px;
+    color : #fff;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 100px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    height: 100%;
+}
+.wikitable tbody tr:nth-of-type(even) {
+    background-color: #df7016;
+    text-align: left;
+    
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+  }
+
+.wikitable tbody tr:nth-of-type(odd) {
+    background-color: #16a6df;
+    text-align: left;
+    
+}

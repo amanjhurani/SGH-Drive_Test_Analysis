@@ -52,7 +52,7 @@ export default class RSSIMap extends React.Component {
                     className="map-IND"
                     center={this.state.center.coordinate}
                     zoom={14}
-                    scrollWheelZoom={false}
+                    scrollWheelZoom={true}
                 >
                     <TileLayer
                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
