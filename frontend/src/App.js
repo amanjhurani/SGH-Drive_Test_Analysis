@@ -34,10 +34,10 @@ export default class App extends React.Component {
           <Route exact path="/ecioMap">
             <ECIOMap />
           </Route>
-          <Route exact path="/analize/mapView">
+          <Route exact path="/analyze/mapView">
             <MapView />
           </Route>
-          <Route exact path="/analize/chartView">
+          <Route exact path="/analyze/chartView">
             <ChartView />
           </Route>
           <Route exact path="/kmeans">

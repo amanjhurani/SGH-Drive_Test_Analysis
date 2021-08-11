@@ -23,7 +23,12 @@
     list-style: none;
     padding: 5px;
 }
-
+#dropdown-button-dark-example1, #dropdown-button-dark-example1:focus, #dropdown-button-dark-example1:hover {
+    background-color: transparent;
+    border: 0 !important;
+    outline: none;
+    box-shadow: none;
+}
 .sidebar-list-item {
     padding: 15px;
     cursor: pointer;

@@ -27,11 +27,10 @@ export default class KmeanPie extends React.PureComponent {
                         data: [kdata.filter(k => k==0).length,kdata.filter(k => k==1).length,kdata.filter((k) => k==2).length, kdata.filter((k) => k==3).length, kdata.filter((k) => k==4).length],
                         backgroundColor: [
                             'blue',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
+                            '#ffff00',
+                            '#a6ff4d',
+                            '#ff0000',
+                            '#248f24'
                           ], 
                     }
                 ],

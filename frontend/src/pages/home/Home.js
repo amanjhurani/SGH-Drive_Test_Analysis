@@ -96,7 +96,7 @@ export default class Home extends React.Component {
                 />
               </div>
               <div className="home-btndiv my-2">
-                <Link to="/analize" >
+                <Link to="/analyze/mapView" >
                 <button className="home-analyzebtn">
                   <Timeline className="btn-icon" /> Analyze
                 </button>

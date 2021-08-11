@@ -19,9 +19,13 @@ a, a:hover {
 .sidebar-list-item:hover {
    background-color:rgba(22, 22, 29, 0.90) !important;
 }
-tr td {
+tr td, table th {
     color: white;
 }
+table th {
+    font-size: 22px;
+}
+
 .chart {
     flex: 6;
 }

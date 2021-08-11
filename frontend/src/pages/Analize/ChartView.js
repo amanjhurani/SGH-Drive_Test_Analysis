@@ -25,7 +25,7 @@ class ChartView extends React.Component {
     }
     render() {
         return (
-            <div className="analize-wrapper">
+            <div className="analize-wrapper chart-view">
                 <div className="grid-4">
                     <div className="grid-item btn btn-primary shadow">
                         <p
