@@ -4,6 +4,8 @@ import './Report.css';
 import RSSIMap from '../maps/RSSIMap';
 import RSCPMap from '../maps/RSCPMap';
 import ECIOMap from '../maps/ECIOMap';
+import KmeanPie from '../charts/KmeanPie';
+import KmeanChart from '../charts/KmeansChatrt';
 export default class Report extends React.Component {
     constructor(props) {
         super(props);
@@ -203,6 +205,15 @@ export default class Report extends React.Component {
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+
+                    <div className="Report-graphs-two">
+                    <div className = "Kmeans-Chart"></div>
+                         <KmeanChart></KmeanChart>
+                        <div></div>
+                        <div className = "Kmeans-Pie">
+                            <KmeanPie></KmeanPie>
+                        </div>
                     </div>
                     <hr />
                 </div>

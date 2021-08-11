@@ -92,3 +92,18 @@ table, th, td {
     text-align: left;
 
 }
+/* 
+.Report-graphs-two {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Kmeans-Pie {
+}
+
+
+.Kmeans-Chart {
+    width: 50%;
+    height: 300px;
+    margin: 0;
+} */
