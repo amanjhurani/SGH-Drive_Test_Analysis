@@ -209,6 +209,7 @@ export default class Report extends React.Component {
 
                     <div className="Report-graphs-two">
                     <div className = "Kmeans-Chart"></div>
+                        <h4 className="text-center">RSCP x EC/IO</h4>
                          <KmeanChart></KmeanChart>
                         <div></div>
                         <div className = "Kmeans-Pie">

@@ -19,12 +19,14 @@ export default class KmeanPie extends React.PureComponent {
             var kdata = data.map((kmean) => {
                  return kmean.label
             })
+            var klength = kdata.length
             await this.setState({ kmeans: data });
             const kmean_data = {
+              labels: ['Good', 'Fair', 'Very Good', 'Poor', 'Excellent'],
                 datasets: [
                     {
                         label: ['Good', 'Fair', 'Very Good', 'Poor', 'Excellent'],
-                        data: [kdata.filter(k => k==0).length,kdata.filter(k => k==1).length,kdata.filter((k) => k==2).length, kdata.filter((k) => k==3).length, kdata.filter((k) => k==4).length],
+                        data: [(kdata.filter(k => k==0).length/klength)*100,(kdata.filter(k => k==1).length/klength)*100,(kdata.filter(k => k==2).length/klength)*100, (kdata.filter(k => k==3).length/klength)*100, (kdata.filter(k => k==4).length/klength)*100],
                         backgroundColor: [
                             'blue',
                             '#ffff00',

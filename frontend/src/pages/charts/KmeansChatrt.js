@@ -20,7 +20,7 @@ export default class KmeansChart extends React.PureComponent {
             const kdata = {
                 datasets: [
                     {
-                        label: '0',
+                        label: 'Good',
                         data: this.state.kmeans.map((kmean) => {
                                if(kmean.label == 0) {
                                 return {x: kmean.active_ecio, y: kmean.active_rscp}
@@ -30,7 +30,7 @@ export default class KmeansChart extends React.PureComponent {
                         backgroundColor: 'blue',
                     },
                     {
-                        label: '1',
+                        label: 'Fair',
                         data: this.state.kmeans.map((kmean) => {
                                if(kmean.label == 1) {
                                 return {x: kmean.active_ecio, y: kmean.active_rscp}
@@ -40,7 +40,7 @@ export default class KmeansChart extends React.PureComponent {
                         backgroundColor: '#ffff00',
                     },
                     {
-                        label: '2',
+                        label: 'Very Good',
                         data: this.state.kmeans.map((kmean) => {
                                if(kmean.label == 2) {
                                 return {x: kmean.active_ecio, y: kmean.active_rscp}
@@ -50,7 +50,7 @@ export default class KmeansChart extends React.PureComponent {
                         backgroundColor: '#a6ff4d',
                     },
                     {
-                        label: '3',
+                        label: 'Poor',
                         data: this.state.kmeans.map((kmean) => {
                                if(kmean.label == 3) {
                                 return {x: kmean.active_ecio, y: kmean.active_rscp}
@@ -60,7 +60,7 @@ export default class KmeansChart extends React.PureComponent {
                         backgroundColor: '#ff0000', //fixed
                     },
                     {
-                        label: '4',
+                        label: 'Excellent',
                         data: this.state.kmeans.map((kmean) => {
                                if(kmean.label == 4) {
                                 return {x: kmean.active_ecio, y: kmean.active_rscp}

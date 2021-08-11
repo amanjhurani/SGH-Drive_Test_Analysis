@@ -23,6 +23,9 @@
     margin-bottom: 0;
     color: white;
 }
+.grid-item.active {
+    background-color: #054a94 !important;
+}
 .row {
     --bs-gutter-x: 0 !important;}
 .analize-wrapper .leaflet-container {

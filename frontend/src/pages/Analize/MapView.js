@@ -13,7 +13,8 @@ class MapView extends React.Component {
             myComps: {
                 RSSIMap: RSSIMap,
                 RSCPMap: RSCPMap,
-                ECIOMap: ECIOMap
+                ECIOMap: ECIOMap,
+                active: "RSSIMap"
             }
         };
     }
@@ -23,7 +24,7 @@ class MapView extends React.Component {
     }
     RenderView(comp) {
         var comps = this.state.myComps
-        this.setState({currentComponent: comps[comp]});
+        this.setState({currentComponent: comps[comp], active: comp});
     }
     render() {
         const components = {
@@ -32,15 +33,15 @@ class MapView extends React.Component {
         return (
             <div className="analize-wrapper bg-black-2">
                 <div className="grid-4">
-                    <div className="grid-item btn btn-primary shadow">
-                        <p className="text-center" onClick={() => this.RenderView("RSSIMap")}>
+                    <div className={"grid-item btn-primary shadow " + ((this.state.active == "RSSIMap") ? "active": "")} onClick={() => this.RenderView("RSSIMap")}>
+                        <p className="text-center" >
                             RSSI Map
                         </p>
                     </div>
-                    <div className="grid-item btn-primary shadow" onClick={() => this.RenderView("RSCPMap")}>
+                    <div className="grid-item btn-primary shadow " className={"grid-item btn-primary shadow " + ((this.state.active == "RSCPMap") ? "active": "")} onClick={() => this.RenderView("RSCPMap")}>
                         <p className="text-center">RSCP Map</p>
                     </div>
-                    <div className="grid-item btn-primary shadow" onClick={() => this.RenderView("ECIOMap")}>
+                    <div className={"grid-item btn-primary shadow " + ((this.state.active == "ECIOMap") ? "active": "")} onClick={() => this.RenderView("ECIOMap")}>
                         <p className="text-center">EC/Io Map</p>
                     </div>
                 </div>

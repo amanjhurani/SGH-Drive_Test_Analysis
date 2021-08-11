@@ -12,6 +12,7 @@ class ChartView extends React.Component {
             myComps: {
                 KmeansChart: KmeansChart,
                 KmeanPie: KmeanPie,
+                active: "KmeansChart"
             },
         };
     }
@@ -21,7 +22,7 @@ class ChartView extends React.Component {
     }
     RenderView(comp) {
         var comps = this.state.myComps;
-        this.setState({ currentComponent: comps[comp] });
+        this.setState({ currentComponent: comps[comp], active: comps});
     }
     render() {
         return (
