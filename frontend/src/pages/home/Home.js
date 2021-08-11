@@ -59,7 +59,7 @@ export default class Home extends React.Component {
         .catch((err) => {
           console.log("something went wron with file get", err);
         })
-      } 
+      }
   }
   render() {
     return (
@@ -73,12 +73,12 @@ export default class Home extends React.Component {
                  return <Dropdown.Item key={idx}>{file}</Dropdown.Item>
                 })
               }
-              
+
             </DropdownButton>
             <ReactFileReader
             handleFiles={(e) => this.handleFiles(e)}
             fileTypes={".csv"}
-            className="float-right"
+            className="float-left"
           >
             <button className="home-uploadbtn shadow bg-black-1">
               <Publish className="btn-icon" /> Upload

@@ -5,9 +5,9 @@
 .home-uploadbtn {
     position: sticky;
     padding: 7px 40px;
-    background-color: rgb(255, 255, 255);
+    background: #0062cc;
+  	color: #ffffff !important;
     border-radius: 10px;
-    color: #0062cc;
     /* font-weight: bold; */
     font-size: 20px;
     border: 3px solid #0062cc;
@@ -45,7 +45,7 @@
     background-color: #0062cc;
     color: #ffffff;
     text-align: left;
-    
+
 }
 
 .home-blank {
@@ -74,7 +74,7 @@
 	color: #0062cc !important;
 	background: none;
 
-    
+
 }
 
 .home-analyzebtn:hover {
