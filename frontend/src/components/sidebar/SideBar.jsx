@@ -27,7 +27,7 @@ export default function TopBar() {
 
                                     <Dropdown.Menu variant="light" className="bg-black-1">
                                     <Dropdown.Item as={Link} to="/analyze/mapView">
-                                            Chart View
+                                            Map View
                                         </Dropdown.Item>
                                         <Dropdown.Item as={Link} to="/analyze/chartView">
                                             Chart View
