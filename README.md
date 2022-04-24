@@ -7,7 +7,7 @@
 5. Implement Login for different users (Not Necessary)
 6. Create a template report to be used for automatic report generation.
 
-## How to run django backend (Python) PORT 3000
+## How to run django backend (Python) PORT 5000
 ### where "manage.py" exists
 >pip install -r requirements.txt
 
